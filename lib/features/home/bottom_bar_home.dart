@@ -1,5 +1,5 @@
 import 'package:avto_elon/features/add_ad/add_ad_page.dart';
-import 'package:avto_elon/features/auth/kabinet_page.dart';
+import 'package:avto_elon/features/auth/cabinet_page.dart';
 import 'package:avto_elon/features/chat/chat_page.dart';
 import 'package:avto_elon/features/favourites/favourite_page.dart';
 import 'package:avto_elon/features/home/home_page.dart';
@@ -7,7 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarHome extends StatefulWidget {
-  const BottomBarHome({super.key});
+  late Widget child;
+   BottomBarHome({super.key, required child});
   static const id = '/bottom_screens';
 
   @override
@@ -23,11 +24,12 @@ class _BottomBarHomeState extends State<BottomBarHome> {
     FavouritePage(),
     AddAdPage(),
     ChatPage(),
-    KabinetPage(),
+    CabinetPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    widget.child = _pages[index];
     return Scaffold(
       body: _pages[index],
       bottomNavigationBar: BottomNavigationBar(

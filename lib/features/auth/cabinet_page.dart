@@ -1,12 +1,20 @@
-import 'package:avto_elon/features/auth/kabinet_admin_login.dart';
-import 'package:avto_elon/features/auth/kabinet_num_login.dart';
-import 'package:avto_elon/features/auth/kabinet_setting.dart';
+import 'package:avto_elon/features/auth/cabinet_admin_login.dart';
+import 'package:avto_elon/features/auth/cabinet_num_login.dart';
+import 'package:avto_elon/features/auth/cabinet_setting.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class KabinetPage extends StatelessWidget {
-  const KabinetPage({super.key});
+import '../../common/router/route_name.dart';
+
+class CabinetPage extends StatefulWidget {
+  const CabinetPage({super.key});
   static const id = "kabinet_page";
 
+  @override
+  State<CabinetPage> createState() => _CabinetPageState();
+}
+
+class _CabinetPageState extends State<CabinetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +27,10 @@ class KabinetPage extends StatelessWidget {
         ),),
         actions: [
           TextButton(
-
               autofocus: true,
               onPressed: (){
-                Navigator.pushNamed(context, KabinetSetting.id);
+                setState(() {});
+                context.go("/cabinet_page/cabinet_settings_page");
               },
               child: Row(
             children: [
@@ -68,7 +76,8 @@ class KabinetPage extends StatelessWidget {
                            ),
                            color: Colors.blue,
                            onPressed: (){
-                             Navigator.pushNamed(context, KabinetNumLogin.id);
+                             setState(() {});
+                             context.go("/cabinet_page/cabinet_num_login_page");
                            },
                            child: Text("Telefon raqam orqali tizimga kiring", style: TextStyle(
                              fontSize: 16,
@@ -81,7 +90,8 @@ class KabinetPage extends StatelessWidget {
                  ),
                   SizedBox(height: 15,),
                   MaterialButton(onPressed: (){
-                    Navigator.pushNamed(context, KabinetAdminLogin.id);
+                    setState(() {});
+                    context.go("/cabinet_page/cabinet_admin_auth_page");
                   },
                     elevation: 0,
                     height: 55,

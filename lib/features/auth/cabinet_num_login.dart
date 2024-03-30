@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class KabinetNumLogin extends StatelessWidget {
-  const KabinetNumLogin({super.key});
+class CabinetNumLogin extends StatelessWidget {
+  const CabinetNumLogin({super.key});
   static const id = "kabinet_num_login";
 
   @override
