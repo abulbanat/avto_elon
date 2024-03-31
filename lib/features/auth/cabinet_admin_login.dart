@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CabinetAdminLogin extends StatelessWidget {
   const CabinetAdminLogin({super.key});
@@ -8,10 +10,25 @@ class CabinetAdminLogin extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: MaterialButton(
+          onPressed: (){
+            context.pop();
+          },
+          child: Row(
+
+            children: [
+              Icon(CupertinoIcons.xmark, color: Colors.black,),
+
+            ],
+
+          ),
+        ),
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text("Shaxsiy Kabinet", style: TextStyle(
             fontSize: 18,
-            fontWeight: FontWeight.w600
+            fontWeight: FontWeight.w600,
+          color: Colors.black
         ),),
         // leading:
         // MaterialButton(

@@ -12,6 +12,7 @@ Widget addSellingCar(BuildContext context, String brand, String model, String po
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -19,22 +20,22 @@ Widget addSellingCar(BuildContext context, String brand, String model, String po
                 Row(
                   children: [
                     Text("$brand ",style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       color: Colors.blue
                     ),),
                     Text("$model ",style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Colors.blue
                     ),),
                     Text("$positsia-pozitsiya",style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Colors.blue
                     ),),
                   ],
                 ),
                 GestureDetector(
                   child: LikeButton(
-                    size: 30,
+                    size: 25,
                     countPostion: CountPostion.bottom,
                   ),
                 )
@@ -44,6 +45,7 @@ Widget addSellingCar(BuildContext context, String brand, String model, String po
               children: [
                 Text("$price y.e.",style: TextStyle(
                   fontSize: 20,
+                  fontWeight: FontWeight.w700
 
                 ),),
               ],

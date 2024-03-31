@@ -8,4 +8,6 @@ class AppRouteName {
   static const cabinetSettingsPage = "cabinet_settings_page";
   static const cabinetAdminAuthPage = "cabinet_admin_auth_page";
   static const cabinetNumLoginPage = "cabinet_num_login_page";
+  static const announcementsPage = "announcements";
+  static const searchFavouritePage = "searchFavouritePage";
 }

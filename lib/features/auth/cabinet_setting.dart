@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CabinetSetting extends StatelessWidget {
   const CabinetSetting({super.key});
@@ -8,6 +9,20 @@ class CabinetSetting extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: MaterialButton(
+          onPressed: (){
+            context.pop();
+          },
+          child: Row(
+
+            children: [
+              Icon(Icons.arrow_back_ios, color: Colors.black,),
+
+            ],
+
+          ),
+        ),
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text('Sozlamalar',
         style: TextStyle(

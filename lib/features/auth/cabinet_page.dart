@@ -14,10 +14,12 @@ class _CabinetPageState extends State<CabinetPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.grey.shade200,
         title: Text("Kabinet", style: TextStyle(
           fontSize: 20,
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w600,
+          color: Colors.black
         ),),
         actions: [
           TextButton(

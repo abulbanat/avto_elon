@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CabinetNumLogin extends StatelessWidget {
   const CabinetNumLogin({super.key});
@@ -8,10 +9,29 @@ class CabinetNumLogin extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leadingWidth: 126,
+        leading: MaterialButton(
+          onPressed: (){
+            context.pop();
+          },
+          child: Row(
+
+            children: [
+              Icon(Icons.arrow_back_ios, color: Colors.black,),
+              Text("Kabinet", style: TextStyle(
+                fontSize: 19
+              ),)
+
+            ],
+
+          ),
+        ),
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text("Shaxsiy Kabinet", style: TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w600,
+          color: Colors.black
         ),),
         // leading:
         // MaterialButton(
@@ -64,13 +84,40 @@ class CabinetNumLogin extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                child: Text("Avtorizatisiyada davom etsangiz ushbu qoidalarga rozilik bildirasiz", textAlign: TextAlign.center,style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey
-                ),),
-              ),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 100),
+                child: Text.rich(
+                  textAlign: TextAlign.center,
+                  TextSpan(
+                      text: "Avtorizatisiyada davom etsangiz ",
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontSize: 13,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      children: [
+                        TextSpan(
 
+                            text: "ushbu qoidalarga ",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            children: [
+                              TextSpan(
+                                text:
+                                "rozilik bildirasiz ",
+                                style: TextStyle(
+                                  color: Colors.grey[700],
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              )
+                            ])
+                      ]),
+                ),
+
+              ),
 
             ],
           ),

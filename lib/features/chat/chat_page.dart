@@ -8,10 +8,12 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text("Suhbatlar", style: TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w600,
+          color: Colors.black
         ),),
       ),
       body: Center(

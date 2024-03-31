@@ -1,11 +1,6 @@
 import 'package:avto_elon/common/router/app_router.dart';
-import 'package:avto_elon/features/auth/cabinet_admin_login.dart';
-import 'package:avto_elon/features/auth/cabinet_num_login.dart';
-import 'package:avto_elon/features/auth/cabinet_page.dart';
-import 'package:avto_elon/features/auth/cabinet_setting.dart';
 import 'package:flutter/material.dart';
-import 'features/home/bottom_bar_home.dart';
-import 'features/home/home_page.dart';
+
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,6 +8,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+        useMaterial3: false
+      ),
+
       debugShowCheckedModeBanner: false,
       // initialRoute: BottomBarHome.id,
       // routes: {

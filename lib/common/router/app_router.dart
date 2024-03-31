@@ -7,7 +7,9 @@ import 'package:avto_elon/features/auth/cabinet_num_login.dart';
 import 'package:avto_elon/features/auth/cabinet_page.dart';
 import 'package:avto_elon/features/auth/cabinet_setting.dart';
 import 'package:avto_elon/features/chat/chat_page.dart';
+import 'package:avto_elon/features/favourites/announcements.dart';
 import 'package:avto_elon/features/favourites/favourite_page.dart';
+import 'package:avto_elon/features/favourites/search_favourite_page.dart';
 import 'package:avto_elon/features/home/bottom_bar_home.dart';
 import 'package:avto_elon/features/home/home_page.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +48,24 @@ class AppRouter{
                 name: "FavouritePage",
                 builder: (BuildContext context, GoRouterState state){
                     return FavouritePage();
-                }
+                },
+                  routes: [
+                    GoRoute(
+                      path: AppRouteName.announcementsPage,
+                      name: "AnnouncementsPage",
+                      builder: (BuildContext context, GoRouterState state) {
+                        return AnnouncementsPage();
+                      },
+                    ),
+                    GoRoute(
+                        path: AppRouteName.searchFavouritePage,
+                        name: "SearchFavouritePage",
+                        builder: (BuildContext context, GoRouterState state){
+                          return SearchFavouritePage();
+                        }
+                    ),
+
+                  ]
               ),
 
               GoRoute(

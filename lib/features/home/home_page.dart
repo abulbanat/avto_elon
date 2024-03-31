@@ -1,5 +1,8 @@
+
 import 'package:avto_elon/features/home/widgets/widgets_home.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,9 +11,35 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List HomeIcons = [
+      Icon(Icons.add),
+      Icon(CupertinoIcons.car_detailed),
+      Icon(CupertinoIcons.car),
+      Icon(Icons.integration_instructions),
+      Icon(Icons.car_repair),
+      Icon(Icons.attractions_rounded)
+    ];
+    List<Color> Colores = [
+      Colors.blue[100]!,
+      Colors.blue,
+      Colors.blue,
+      Colors.blue,
+      Colors.blue,
+      Colors.blue,
+    ];
+
+    List<String> HomeNames = [
+      "Sotish",
+      "Avtomobillar",
+      "Yuk mashinalari",
+      "Avto ehtiyot qismlari va tovarlar",
+      "Tamirlash va xizmatlar",
+      "Maxsus Texnika"
+    ];
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text(
           "avtoelon.uz",
@@ -31,12 +60,32 @@ class HomePage extends StatelessWidget {
                     height: 200,
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 1.5, crossAxisCount: 3,
+                        childAspectRatio: 1.5,
+                        crossAxisCount: 3,
                       ),
                       itemCount: 6,
                       physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true ,
-                      itemBuilder: (context, index) => sectionHomePage(context, ),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colores.elementAt(index),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              HomeIcons.elementAt(index),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(HomeNames.elementAt(index), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   )
                   // Column(
@@ -229,8 +278,8 @@ class HomePage extends StatelessWidget {
             ),
             addSellingCar(context, "Chevrolet", "Nexia 3", "4", "15 000",
                 "2017", "Avtomat", "Benzin + Gaz Metan", "Andijon"),
-            addSellingCar(context, "Chevrolet", "Gentra Elegant", "4", "17 000",
-                "2023", "Avtomat", "Benzin ", "Toshkent"),
+            addSellingCar(context, "Chevrolet", "Gentra", "4", "17 000", "2023",
+                "Avtomat", "Benzin ", "Toshkent"),
             addSellingCar(context, "Chevrolet", "Nexia 2", "2", "19 000",
                 "2015", "Mexanika", "Gaz Metan", "Buxoro"),
             addSellingCar(context, "Chevrolet", "Nexia 3", "4", "15 000",
