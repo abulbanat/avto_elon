@@ -1,4 +1,3 @@
-import 'package:avto_elon/app.dart';
 import 'package:flutter/material.dart';
 
 class CabinetSetting extends StatelessWidget {
@@ -7,7 +6,9 @@ class CabinetSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text('Sozlamalar',
         style: TextStyle(
           color: Colors.black,
