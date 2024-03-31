@@ -1,4 +1,5 @@
 
+
 import 'package:avto_elon/common/router/route_name.dart';
 import 'package:avto_elon/features/add_ad/add_ad_page.dart';
 import 'package:avto_elon/features/auth/cabinet_admin_login.dart';
@@ -12,10 +13,19 @@ import 'package:avto_elon/features/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AppRouter {
-  static final GoRouter goRouter =GoRouter(
+class AppRouter{
+
+  static final GoRouter goRouter = GoRouter(
       initialLocation: AppRouteName.homePage,
+      debugLogDiagnostics: true,
       routes: [
+        GoRoute(
+            path: AppRouteName.adPage,
+            name: "AdPage",
+            builder: (BuildContext context, GoRouterState state){
+              return AddAdPage();
+            }
+        ),
         ShellRoute(
             builder: (_,__, child){
               return BottomBarHome
@@ -36,14 +46,6 @@ class AppRouter {
                 name: "FavouritePage",
                 builder: (BuildContext context, GoRouterState state){
                     return FavouritePage();
-                }
-              ),
-
-              GoRoute(
-                  path: AppRouteName.adPage,
-                  name: "AdPage",
-                builder: (BuildContext context, GoRouterState state){
-                    return AddAdPage();
                 }
               ),
 
@@ -87,7 +89,8 @@ class AppRouter {
               ),
             ]
         )
-      ]
+        ]
+
   );
 }
 

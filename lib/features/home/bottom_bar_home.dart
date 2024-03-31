@@ -14,8 +14,8 @@ class BottomBarHome extends StatefulWidget {
 
 class _BottomBarHomeState extends State<BottomBarHome> {
 
-  int currentIndex = 0;
-  PageController controller = PageController();
+  int selectedIndex = 0;
+   PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _BottomBarHomeState extends State<BottomBarHome> {
         unselectedFontSize: 10,
         selectedFontSize: 10,
         type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
+        currentIndex: selectedIndex,
         selectedLabelStyle: const TextStyle(color: Colors.black),
         unselectedLabelStyle: const TextStyle(color: Colors.grey),
         unselectedItemColor: Colors.grey,
@@ -34,18 +34,16 @@ class _BottomBarHomeState extends State<BottomBarHome> {
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1.0),
         onTap: (index){
           setState(() {
-          currentIndex = index;
+            selectedIndex = index;
           });
-
           if(index == 1){
             context.go(AppRouteName.favouritePage);
           }
           else if(index == 2){
-            context.go(AppRouteName.adPage);
+            context.push(AppRouteName.adPage);
           }
           else if(index == 3){
             context.go(AppRouteName.chatPage);
-            setState(() {});
           }
          else if(index == 4){
             context.go(AppRouteName.cabinetPage);

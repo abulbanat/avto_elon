@@ -24,7 +24,6 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
 
         child: Column(
-
           children: [
             Container(
               color: Colors.white,
@@ -36,10 +35,11 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           elevation: 0,
                           height: 80,
+                          minWidth: 97,
                           onPressed: (){},
                           shape: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -58,10 +58,11 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           elevation: 0,
                           height: 80,
+                          minWidth: 97,
                           onPressed: (){},
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -72,18 +73,18 @@ class HomePage extends StatelessWidget {
                             children: [
                               Icon(Icons.car_rental_sharp, size: 35,),
                               Text("Avtomobillar",style: TextStyle(
-                                fontSize: 12
+                                fontSize: 10
                               ),)
                             ],
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           elevation: 0,
                           height: 80,
-
+                          minWidth: 95,
                           onPressed: (){},
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -94,7 +95,7 @@ class HomePage extends StatelessWidget {
                             children: [
                               Icon(Icons.car_rental_sharp, size: 35,),
                               Text("Yuk mashinalari",style: TextStyle(
-                                  fontSize: 12
+                                  fontSize: 9
                               ),)
                             ],
                           ),
@@ -110,7 +111,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           height: 80,
-                          minWidth: 105,
+                          minWidth: 97,
                           onPressed: (){
 
                           },
@@ -131,7 +132,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           height: 80,
-                          minWidth: 105,
+                          minWidth: 97,
                           onPressed: (){},
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -150,7 +151,7 @@ class HomePage extends StatelessWidget {
                         padding: const EdgeInsets.all(5.0),
                         child: MaterialButton(
                           height: 80,
-                          minWidth: 105,
+                          minWidth: 97,
                           onPressed: (){},
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
