@@ -1,5 +1,3 @@
-import 'package:avto_elon/common/router/route_name.dart';
-import 'package:avto_elon/common/router/route_name.dart';
 import 'package:avto_elon/features/add_ad/widgets/add_page_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,15 +10,18 @@ class AddAdPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            context.pop();
-          },
-          icon: Icon(Icons.arrow_back_outlined,
-            size: 20,
-            color: Colors.blue[300],
-          ),
-        ),
+        backgroundColor: Colors.white,
+        actions: [
+          TextButton(
+            onPressed: (){
+              context.pop();
+            },
+            child: Text("Yopish", style: TextStyle(
+              fontSize: 18,
+              color: Colors.blue
+            ),),
+          )
+        ]
       ),
       body:
           Column(

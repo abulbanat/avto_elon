@@ -5,7 +5,7 @@ class FavouritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenwidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -21,6 +21,7 @@ class FavouritePage extends StatelessWidget {
         child: Column(
           children: [
             Material(
+              color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Container(
@@ -30,54 +31,43 @@ class FavouritePage extends StatelessWidget {
                     color: Colors.grey[300],
                   ),
                   child: TabBar(
+                    indicatorSize: TabBarIndicatorSize.tab,
+
                     physics: const ClampingScrollPhysics(),
-                    padding: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(3),
                   unselectedLabelColor: Colors.blue,
                     labelColor: Colors.white,
                     indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
                       color: Colors.lightBlue
                     ),
                     tabs: [
                       Tab(
                         child: Container(
                           height: 35,
-                          width: screenwidth/2,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-
-
-
-                          ),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text("salom"),
+                            child: Text("E'lonlar"),
                           ),
                         ),
                       ),
                       Tab(
                         child: Container(
                           height: 35,
-                          width: screenwidth/2,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
 
-                          ),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text("salom"),
+                            child: Text("Qidirish"),
                           ),
                         ),
                       )
                     ],
-
                   ),
                 ),
               ),
             )
           ],
         ),
-
       ),
     );
   }

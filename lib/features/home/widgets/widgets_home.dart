@@ -124,3 +124,25 @@ Widget addSellingCar(BuildContext context, String brand, String model, String po
     ),
   );
 }
+
+Widget sectionHomePage(BuildContext context,){
+  return Padding(
+    padding: const EdgeInsets.all(5.0),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.blue,
+      ),
+ 
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(Icons.add),
+          SizedBox(height: 5,),
+          Text("Qo'shish")
+        ],
+      ),
+    ),
+  );
+}
