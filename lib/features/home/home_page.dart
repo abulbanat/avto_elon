@@ -1,6 +1,6 @@
 import 'package:avto_elon/features/home/widgets/widgets_home.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,7 +8,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
@@ -210,11 +209,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5,),
-            addSellingCar(context),
-            addSellingCar(context),
-            addSellingCar(context),
-            addSellingCar(context),
-            addSellingCar(context),
+            addSellingCar(context, "Chevrolet", "Nexia 3", "4", "15 000", "2017", "Avtomat", "Benzin + Gaz Metan", "Andijon"),
+            addSellingCar(context, "Chevrolet", "Gentra Elegant", "4", "17 000","2023", "Avtomat", "Benzin ", "Toshkent"),
+            addSellingCar(context, "Chevrolet", "Nexia 2", "2", "19 000","2015", "Mexanika", "Gaz Metan", "Buxoro"),
+            addSellingCar(context, "Chevrolet", "Nexia 3", "4", "15 000","2014", "Avtomat", "Benzin", "Samarqand"),
+            addSellingCar(context, "Chevrolet", "Nexia 3", "4", "15 000","2019", "Avtomat", "Gaz Propan", "Qashqadaryo"),
           ],
         ),
       ),

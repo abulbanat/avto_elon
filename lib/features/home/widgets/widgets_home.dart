@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-Widget addSellingCar(BuildContext context){
+Widget addSellingCar(BuildContext context, String brand, String model, String positsia, String price, String year, String clutch, String oil, String location){
   double screenwidth = MediaQuery.of(context).size.width;
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 2.0),
@@ -16,10 +16,22 @@ Widget addSellingCar(BuildContext context){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Chevrolet Nexia 3, 4 pozitsiya",style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.blue
-                ),),
+                Row(
+                  children: [
+                    Text("$brand ",style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blue
+                    ),),
+                    Text("$model ",style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.blue
+                    ),),
+                    Text("$positsia-pozitsiya",style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.blue
+                    ),),
+                  ],
+                ),
                 GestureDetector(
                   child: LikeButton(
                     size: 30,
@@ -30,7 +42,7 @@ Widget addSellingCar(BuildContext context){
             ),
             Row(
               children: [
-                Text("13 300 y.e.",style: TextStyle(
+                Text("$price y.e.",style: TextStyle(
                   fontSize: 20,
 
                 ),),
@@ -56,28 +68,28 @@ Widget addSellingCar(BuildContext context){
                       children: [
                         Icon(Icons.calendar_month),
                         SizedBox(width: 5,),
-                        Text("2023 yil")
+                        Text("$year yil")
                       ],
                     ),
                     Row(
                       children: [
                         Icon(Icons.cleaning_services_outlined),
                         SizedBox(width: 5,),
-                        Text("Mexanika")
+                        Text("$clutch")
                       ],
                     ),
                     Row(
                       children: [
                         Icon(Icons.oil_barrel_outlined),
                         SizedBox(width: 5,),
-                        Text("Benzin")
+                        Text("$oil")
                       ],
                     ),
                     Row(
                       children: [
                         Icon(Icons.location_on),
                         SizedBox(width: 5,),
-                        Text("Toshkent")
+                        Text("$location")
                       ],
                     ),
                   ],

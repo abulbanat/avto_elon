@@ -1,4 +1,3 @@
-import 'package:avto_elon/app.dart';
 import 'package:flutter/material.dart';
 
 class CabinetSetting extends StatelessWidget {
