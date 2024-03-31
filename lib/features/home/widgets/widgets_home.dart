@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 Widget addSellingCar(BuildContext context){
   double screenwidth = MediaQuery.of(context).size.width;
@@ -18,10 +19,11 @@ Widget addSellingCar(BuildContext context){
               children: [
                 Text("Chevrolet Nexia 3, 4 pozitsiya"),
                 GestureDetector(
-                  // onTap: ,
-                  // Icon rangi o'zgarishi kere
-                  child: Icon(Icons.favorite_border_outlined),
-
+                  child: LikeButton(
+                    size: 30,
+                    likeCount: 100,
+                    countPostion: CountPostion.bottom,
+                  ),
                 )
               ],
             ),

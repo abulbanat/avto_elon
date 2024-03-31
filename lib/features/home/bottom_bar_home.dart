@@ -1,14 +1,11 @@
-import 'package:avto_elon/features/add_ad/add_ad_page.dart';
-import 'package:avto_elon/features/auth/cabinet_page.dart';
-import 'package:avto_elon/features/chat/chat_page.dart';
-import 'package:avto_elon/features/favourites/favourite_page.dart';
-import 'package:avto_elon/features/home/home_page.dart';
+import 'package:avto_elon/common/router/route_name.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomBarHome extends StatefulWidget {
-  late Widget child;
-   BottomBarHome({super.key, required child});
+  final Widget child;
+   BottomBarHome({super.key, required this.child});
   static const id = '/bottom_screens';
 
   @override
@@ -17,36 +14,45 @@ class BottomBarHome extends StatefulWidget {
 
 class _BottomBarHomeState extends State<BottomBarHome> {
 
-  int index = 0;
-
-  final _pages = [
-    HomePage(),
-    FavouritePage(),
-    AddAdPage(),
-    ChatPage(),
-    CabinetPage(),
-  ];
+  int currentIndex = 0;
+  PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
-    widget.child = _pages[index];
     return Scaffold(
-      body: _pages[index],
+      body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
         elevation: 16,
         unselectedFontSize: 10,
         selectedFontSize: 10,
         type: BottomNavigationBarType.fixed,
-        currentIndex: index,
+        currentIndex: currentIndex,
         selectedLabelStyle: const TextStyle(color: Colors.black),
         unselectedLabelStyle: const TextStyle(color: Colors.grey),
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1.0),
-        onTap: (int index){
+        onTap: (index){
           setState(() {
-            this.index = index;
+          currentIndex = index;
           });
+
+          if(index == 1){
+            context.go(AppRouteName.favouritePage);
+          }
+          else if(index == 2){
+            context.go(AppRouteName.adPage);
+          }
+          else if(index == 3){
+            context.go(AppRouteName.chatPage);
+            setState(() {});
+          }
+         else if(index == 4){
+            context.go(AppRouteName.cabinetPage);
+          }
+          else{
+            context.go(AppRouteName.homePage);
+          }
         },
         items: const <BottomNavigationBarItem> [
           BottomNavigationBarItem(
@@ -72,9 +78,6 @@ class _BottomBarHomeState extends State<BottomBarHome> {
             icon: Icon(
                 Icons.add_box,color: Colors.blue,size: 30,
             ),
-
-
-
           ),
           BottomNavigationBarItem(
             label: "Chat",

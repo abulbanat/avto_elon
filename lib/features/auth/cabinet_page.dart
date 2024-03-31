@@ -1,14 +1,8 @@
-import 'package:avto_elon/features/auth/cabinet_admin_login.dart';
-import 'package:avto_elon/features/auth/cabinet_num_login.dart';
-import 'package:avto_elon/features/auth/cabinet_setting.dart';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../common/router/route_name.dart';
-
 class CabinetPage extends StatefulWidget {
   const CabinetPage({super.key});
-  static const id = "kabinet_page";
 
   @override
   State<CabinetPage> createState() => _CabinetPageState();
