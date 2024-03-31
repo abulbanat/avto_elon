@@ -7,7 +7,9 @@ class AddAdPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
             context.pop();
@@ -284,12 +286,13 @@ class AddAdPage extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+          // SizedBox(height:10)
         ],
       ),
       bottomSheet: Container(
         height: 70.0,
         width: double.infinity,
-        color: Colors.white70,
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.only(left: 28),
           child: Column(

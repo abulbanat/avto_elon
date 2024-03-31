@@ -12,27 +12,31 @@ Widget addSellingCar(BuildContext context){
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Chevrolet Nexia 3, 4 pozitsiya"),
+                Text("Chevrolet Nexia 3, 4 pozitsiya",style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.blue
+                ),),
                 GestureDetector(
                   child: LikeButton(
                     size: 30,
-                    likeCount: 100,
                     countPostion: CountPostion.bottom,
                   ),
                 )
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+            Row(
               children: [
-                Text("13 300 y.e.", textAlign: TextAlign.start,),
+                Text("13 300 y.e.",style: TextStyle(
+                  fontSize: 20,
+
+                ),),
               ],
             ),
+
             Row(
               children: [
                 Container(
@@ -44,7 +48,7 @@ Widget addSellingCar(BuildContext context){
                     borderRadius: BorderRadius.circular(10)
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(width: 20,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
